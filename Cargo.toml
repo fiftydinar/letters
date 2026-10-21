@@ -1,0 +1,42 @@
+[package]
+name = "letters"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.89"
+description = "A fast, lightweight email client built with Rust and egui"
+license = "MIT"
+repository = ""
+
+[dependencies]
+eframe = { version = "0.33.3", default-features = false, features = [
+    "default_fonts",
+    "glow",
+    "wayland",
+    "x11",
+] }
+base64 = "0.23"
+chrono = { version = "0.4", default-features = false, features = ["clock"] }
+directories = "6"
+env_logger = "0.11"
+image = { version = "0.25", default-features = false, features = ["gif", "jpeg", "png"] }
+imap = { version = "3.0.0-alpha.15", default-features = false, features = ["rustls-tls"] }
+ksni = { version = "0.3.7", default-features = false, features = ["blocking", "async-io"] }
+lettre = { version = "0.11.23", default-features = false, features = [
+    "builder",
+    "hostname",
+    "rustls-native-certs",
+    "rustls-tls",
+    "smtp-transport",
+] }
+log = "0.4"
+mail-parser = { version = "0.11.9", features = ["full_encoding"] }
+notify-rust = "4.18"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[profile.release]
+opt-level = "s"
+lto = "fat"
+codegen-units = 1
+strip = true
+panic = "abort"

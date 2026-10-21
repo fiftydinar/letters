@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Letters
+GenericName=Email Client
+Comment=A fast, quiet email client built with Rust and egui
+Exec=letters
+Icon=letters
+Terminal=false
+Type=Application
+Categories=Network;Email;
+Keywords=email;mail;imap;smtp;
+StartupNotify=true
+StartupWMClass=letters
+X-GNOME-UsesNotifications=true
